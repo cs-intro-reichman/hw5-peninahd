@@ -25,7 +25,7 @@ public class MyString {
         if (str.isEmpty()) {
             return count;
         }
-        
+
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == ch) {
                 count++;
@@ -72,7 +72,7 @@ public class MyString {
     public static String spacedString(String str) {
         String spaced = "";
         if (str.isEmpty()) {
-            spaced += " ";
+            spaced += "";
         }
         for (int i = 0; i < str.length(); i++) {
             spaced += str.charAt(i);
@@ -117,7 +117,7 @@ public class MyString {
         for (int i = 0; i < str2.length(); i++) {
             int index = modifiedStr1.indexOf(str2.charAt(i));
             if (index != -1) {
-                modifiedStr1 = modifiedStr1.substring(0, index) + modifiedStr1.substring(index + 2);
+                modifiedStr1 = modifiedStr1.substring(0, index) + modifiedStr1.substring(index + 1);
             }
         }
         return modifiedStr1;
