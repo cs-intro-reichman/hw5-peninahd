@@ -110,7 +110,8 @@ public class Scrabble {
 			// end-of-line characters.
 			String input = in.readString();
 			if(input.equals(".")){
-				break;
+				System.out.println("End of hand. Total score: " + score + " points");
+				return;
 			} else if (!isWordInDictionary(input)) {
 				System.out.println("Invalid word. Try again.");
 				System.out.println();
@@ -118,7 +119,8 @@ public class Scrabble {
 				score += wordScore(input);
 				System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points");
 				System.out.println();
-				randomHand = MyString.remove(randomHand, input);//problem here removing the characters and the index
+				randomHand = MyString.remove(randomHand, input);
+				break;
 			} else {
 				System.out.println("Invalid word. Try again.");
 				System.out.println();
@@ -126,10 +128,7 @@ public class Scrabble {
 		}
 		if (randomHand.length() == 0) {
 	        System.out.println("Ran out of letters. Total score: " + score + " points");
-			return;
-		} else {
-			System.out.println("End of hand. Total score: " + score + " points");
-			return;
+			return; 
 		}
 	}
 
@@ -190,8 +189,8 @@ public class Scrabble {
 	}
 	public static void testPlayHands() {
 		init();
-		playHand("ocostrza");
+		//playHand("ocostrza");
 		//playHand("arbffip");
-		//playHand("aretiin");
+		playHand("aretiin");
 	}
 }
