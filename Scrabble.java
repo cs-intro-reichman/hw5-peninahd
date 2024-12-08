@@ -87,13 +87,8 @@ public class Scrabble {
 	// (these two vowels make it easier for the user to construct words)
 	public static String createHand() {
 		String randomHand = MyString.randomStringOfLetters(HAND_SIZE - 2);
-		System.out.println("Eight letters: " + randomHand);
 		randomHand = MyString.insertRandomly( 'a', randomHand);
-		System.out.println("added a: " + randomHand);
 		randomHand = MyString.insertRandomly( 'e', randomHand);
-		System.out.println("added e: " + randomHand);
-		randomHand = MyString.spacedString(randomHand);
-		System.out.println("Spaced: " + randomHand);
 		return randomHand;
 	}
 	
@@ -108,7 +103,7 @@ public class Scrabble {
 		// the stream of characters coming from the keyboard. Used for reading the user's inputs.   
 		In in = new In();
 		while (randomHand.length() > 0) {
-			System.out.println("Current Hand: " + randomHand);
+			System.out.println("Current Hand: " + MyString.spacedString(randomHand));
 			System.out.println("Enter a word, or '.' to finish playing this hand:");
 			// Reads the next "token" from the keyboard. A token is defined as a string of 
 			// non-whitespace characters. Whitespace is either space characters, or  
@@ -123,7 +118,7 @@ public class Scrabble {
 				score += wordScore(input);
 				System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points");
 				System.out.println();
-				randomHand = MyString.remove(randomHand, input);
+				randomHand = MyString.remove(randomHand, input);//problem here removing the characters and the index
 			} else {
 				System.out.println("Invalid word. Try again.");
 				System.out.println();
@@ -166,10 +161,10 @@ public class Scrabble {
 	public static void main(String[] args) {
 		//// Uncomment the test you want to run
 		//testBuildingTheDictionary();  
-		////testScrabbleScore();    
+		//testScrabbleScore();    
 		//testCreateHands();  
-		//testPlayHands();
-		playGame();
+		testPlayHands();
+		//playGame();
 	}
 
 	public static void testBuildingTheDictionary() {
