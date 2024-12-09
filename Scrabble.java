@@ -117,12 +117,10 @@ public class Scrabble {
 				System.out.println();
 			} else if(MyString.subsetOf(input, randomHand)) {
 				score += wordScore(input);
-				System.out.print(input + " earned " + wordScore(input) + " points. Score: " + score + " points");
-				//System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points");
-				//randomHand = MyString.remove(randomHand, input);
-				System.out.flush();
+				System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points");
+				randomHand = MyString.remove(randomHand, input);
+				System.out.println();
 				return;
-				//System.outprintln();
 			} else {
 				System.out.println("Invalid word. Try again.");
 				System.out.println();
