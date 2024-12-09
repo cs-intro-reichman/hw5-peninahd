@@ -114,15 +114,12 @@ public class Scrabble {
 				return;
 			} else if (!isWordInDictionary(input)) {
 				System.out.println("Invalid word. Try again.");
-				System.out.println();
 			} else if(MyString.subsetOf(input, randomHand)) {
 				score += wordScore(input);
-				System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points");
+				System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points\n");
 				randomHand = MyString.remove(randomHand, input);
-				System.out.println();
 			} else {
 				System.out.println("Invalid word. Try again.");
-				System.out.println();
 			}
 		}
 		if (randomHand.length() == 0) {
