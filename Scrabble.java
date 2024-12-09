@@ -118,6 +118,7 @@ public class Scrabble {
 			} else if(MyString.subsetOf(input, randomHand)) {
 				score += wordScore(input);
 				System.out.print(input + " earned " + wordScore(input) + " points. Score: " + score + " points");
+				//System.out.println(input + " earned " + wordScore(input) + " points. Score: " + score + " points");
 				randomHand = MyString.remove(randomHand, input);
 				return;
 				//System.outprintln();
